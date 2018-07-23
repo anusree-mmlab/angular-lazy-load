@@ -1,0 +1,11 @@
+<p>
+  category works!
+</p>
+
+<ul>
+  <li *ngFor="let item of childCategoryList;index as i">
+    #{{i+1}}.<br/>
+    Name : {{item.name}}<br/>
+    data : {{item.data}}<br/>
+  </li>
+</ul>

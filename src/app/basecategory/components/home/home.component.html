@@ -1,0 +1,9 @@
+<p>
+  home works!
+</p>
+
+<ul>
+  <li *ngFor="let item of baseCategories">
+    <a  [routerLink]="['/childcategory']" [queryParams]="{c: item}" >{{item}}</a>         
+  </li>
+</ul>
