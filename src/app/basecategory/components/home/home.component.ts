@@ -18,6 +18,10 @@ export class HomeComponent implements OnInit {
       this.baseCategories = cats;
       console.log('base cats', cats);
     });
+
+    setTimeout(() => {
+      this.testService.addBaseCategory('category 5');
+    }, 2000);
   }
 
 }

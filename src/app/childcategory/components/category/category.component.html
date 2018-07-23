@@ -2,10 +2,26 @@
   category works!
 </p>
 
+
+<ul>
+  <li *ngFor="let item of baseCategories">
+    <a (click)="navigateToChild(item)" style="cursor:pointer; color: blue">{{item}}</a>         
+  </li>
+</ul>
+
 <ul>
   <li *ngFor="let item of childCategoryList;index as i">
     #{{i+1}}.<br/>
     Name : {{item.name}}<br/>
     data : {{item.data}}<br/>
+    <div style="padding: 10px; border:solid 1px" >
+      <ul *ngIf="(item[item.name]| json) != ''">
+       <li  *ngFor="let item_c of (item[item.name]);index as j">
+          #{{j+1}}.<br/>
+          Name : {{item_c.name}}<br/>
+          data : {{item_c.data}}<br/>
+       </li>
+      </ul>
+    </div>
   </li>
 </ul>

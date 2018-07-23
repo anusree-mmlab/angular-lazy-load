@@ -13,12 +13,28 @@ export class TestService {
     this.baseCategory = ['category 1', 'category 2', 'category 3'];
     this.childCategory = {
       'category 1': [{
-        name: 'child 1 of category 1',
+        name: 'cat1child1',
         data: 'test data of category 1',
+        cat1child1: [
+          {
+            name: 'first child of category 1/cat1child1 ',
+            data: 'test data of cat1child1',
+          },
+          {
+            name: 'second child of category 1/cat1child1 ',
+            data: 'test data of cat1child1',
+          }
+        ]
       },
       {
-        name: 'child 2 of category 1',
+        name: 'cat1child2',
         data: 'test data of category 1',
+        cat1child2: [
+          {
+            name: 'child of category 1/cat1child2 ',
+            data: 'test data of cat1child2',
+          }
+        ]
       },
       {
         name: 'child 2 of category 1',
@@ -73,5 +89,9 @@ export class TestService {
     });
 
     return childCategory$;
+  }
+
+  addBaseCategory(newcat) {
+    this.baseCategory.push(newcat);
   }
 }
